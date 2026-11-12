@@ -1,7 +1,7 @@
 <div align="center"><a href="https://github.com/ElevionTech/javis"><img src="docs/assets/social-preview.png" width="100%" alt="Javis OS project preview"></a>
 Javis OS
 Your AI workforce. Never miss the best AI.
-Javis OS turns Claude, ChatGPT, Gemini, Grok and the models you choose into one 24/7 workforce on your own machine or server. Each coworker has a role, shares the same memory and tools, and keeps working in the background. When a better model ships, switch and keep everything they learned.
+The upstream Javis OS project brings together Claude, ChatGPT, Gemini, Grok and the models you choose into one 24/7 workforce on your own machine or server. Each coworker has a role, shares the same memory and tools, and keeps working in the background. When a better model ships, switch and keep everything they learned.
 
 Repository: ElevionTech/javis · Private source snapshot · Based on Javis OS by Minh Quý
 [!IMPORTANT]
@@ -36,22 +36,27 @@ Upstream project website: javisos.com · Open source · Self-hosted · 14 AI pro
 <!-- flags:end -->
 🇬🇧 English · [🇻🇳 Tiếng Việt](docs/i18n/vi/README.md) · [🇨🇳 简体中文](docs/i18n/zh/README.md) · [🇪🇸 Español](docs/i18n/es/README.md) · [🇯🇵 日本語](docs/i18n/ja/README.md) · [🇮🇳 हिन्दी](docs/i18n/hi/README.md) · [🇧🇷 Português](docs/i18n/pt-BR/README.md) · [🇰🇷 한국어](docs/i18n/ko/README.md) · [🇷🇺 Русский](docs/i18n/ru/README.md) · [🇩🇪 Deutsch](docs/i18n/de/README.md) · [🇫🇷 Français](docs/i18n/fr/README.md) · [🇮🇩 Bahasa Indonesia](docs/i18n/id/README.md) · 🌍 Help translate
 
-Website · Quick start · Why Javis · Brains · Features · Install · [Docs](docs/en/README.md) · Support
+Website · Quick start · Why Javis · Brains · Features · Install · [Docs](docs/en/README.md) · Upstream support
 
 <img src="docs/assets/screenshots/graph.jpg" alt="The Javis OS dashboard on a real brain of 1,633 notes and 2,413 links: the file tree on the left, the knowledge graph in the middle and the chat bar at the bottom" width="100%"></div>⚡ Quick start
-Upstream installation reference (not yet validated for this repository). The current ElevionTech snapshot is incomplete. Do not follow these installation commands against the ElevionTech repository until the missing files have been safely restored and tested. For the complete published upstream application, use the original maintainer’s instructions. The upstream README says: The easy way: let your own AI install it. Give this repo link to Claude Code or Codex on your machine and say "install Javis OS for me". It only needs to run one command:
-Machine	One command installs everything
-Linux / macOS	git clone https://github.com/blogminhquy/javis-os.git javis && cd javis && chmod +x install.sh && ./install.sh
-Windows	git clone https://github.com/blogminhquy/javis-os.git javis; cd javis; powershell -ExecutionPolicy Bypass -File install.ps1
-Docker	curl -fsSLO https://raw.githubusercontent.com/blogminhquy/javis-os/main/docker-compose.yml && docker compose up -d
+Repository: ElevionTech/javis (private; GitHub access required).
+[!CAUTION]
+Installation is not yet supported from this snapshot. The repository currently excludes 21 files pending security review, including required dashboard files. The commands below reference your own repository, but should only be run after those files are safely restored and installation is tested. They are provided for future use, not as a verified working installer.
+
+Machine	Source and installation commands (after restoration)
+Linux / macOS	git clone https://github.com/ElevionTech/javis.git javis && cd javis && chmod +x install.sh && ./install.sh
+Windows (PowerShell)	git clone https://github.com/ElevionTech/javis.git javis; cd javis; powershell -ExecutionPolicy Bypass -File install.ps1
+Docker	git clone https://github.com/ElevionTech/javis.git javis && cd javis && docker compose up -d
 
 
-Then open http://localhost:7777. The installer sets up Python, the four subscription CLI brains (claude, codex, agy, grok) and a .env, then starts the server. You sign in to each brain on the Models page of the dashboard, no more typing commands.
+Private repository note: You must have access to ElevionTech/javis and authenticate with GitHub when cloning. Raw curl commands to raw.githubusercontent.com may not work for a private repository without authentication. Docker Compose may also depend on external container images; availability of an ElevionTech-maintained image has not been verified.
+
+The upstream Javis OS documentation describes the dashboard at http://localhost:7777, CLI model setup, and .env initialization; none of those steps have been verified for this incomplete checkout.
 [!NOTE]
-Installed an extra CLI after Javis was already running? Restart Javis. A running process keeps the PATH it started with, so it cannot see a CLI installed later.
+If you install an additional CLI while a Javis process is already running, restart Javis so it can see the updated PATH.
 
 <p align="center">
-<img src="docs/assets/diagrams/install-terminal.svg" width="100%" alt="Animated terminal: the one-line installer sets up Python, the four subscription CLI brains and a .env, then reports that Javis is running at http://localhost:7777">
+<img src="docs/assets/diagrams/install-terminal.svg" width="100%" alt="Illustration of the upstream Javis installation flow">
 </p>🤔 Why Javis?
 Javis OS is not a chatbot. It is a self-hosted agentic AI that runs on your own machine or VPS: it reads and writes files, calls tools over MCP, runs skills, queues background work and schedules itself. All of that sits behind a voice-controlled dashboard with a Second Brain (memory + wiki) that accumulates knowledge over time.
 The lock-in nobody warns you about
@@ -182,13 +187,13 @@ flowchart LR
 [!IMPORTANT]
 Javis runs an AI brain with full rights on the machine. When it runs publicly (Docker, VPS, Hostinger), Javis forces login by itself: opening the app shows a create-account or sign-in screen, and nobody can drive it without a password.
 
-💻 On your own Windows or Mac computer? Download the installer and open it like any app: JavisOS-Setup.exe (Windows 10/11) or JavisOS-macOS.dmg (macOS 11+). It checks what is missing (Git, Python, Node, AI brains), installs it, and leaves a JAVIS OS icon to click. Steps: [QUICKSTART.en.md](QUICKSTART.en.md).
+💻 Upstream installer only, not an ElevionTech release: the original project provides JavisOS-Setup.exe (Windows 10/11) or JavisOS-macOS.dmg (macOS 11+). It checks what is missing (Git, Python, Node, AI brains), installs it, and leaves a JAVIS OS icon to click. Those downloads are maintained upstream and have not been verified for this private snapshot. See upstream quick start.
 
 <details open>
 <summary><b>Option 1: Hostinger Docker Manager (domain + HTTPS, one click)</b></summary>🛒 No VPS yet? Get a Hostinger VPS here. Docker Manager comes built in, so Javis installs in one click. Once it is ready, come back to the steps below.
 
-Hostinger VPS → Docker Manager → Compose → URL → paste the Hostinger file and press Deploy:
-https://raw.githubusercontent.com/blogminhquy/javis-os/main/docker-compose.hostinger.yml
+For future deployment after the repository is complete: clone the private repository with GitHub authentication, then inspect [`docker-compose.hostinger.yml`](docker-compose.hostinger.yml) before using it in Hostinger. A direct public raw-file URL will not reliably work for this private repository. Deployment has not been verified.
+
 The Environment box needs only three fields: DOMAIN_NAME, JAVIS_ADMIN_USER, JAVIS_ADMIN_PASSWORD, plus an optional JAVIS_AUTO_UPDATE (set it to true and Javis updates itself daily).
 
 Set DOMAIN_NAME so Hostinger's Traefik issues HTTPS:
@@ -197,16 +202,16 @@ Set DOMAIN_NAME so Hostinger's Traefik issues HTTPS:
 Wait 1-3 minutes for the certificate, then open https://<DOMAIN_NAME>. No Traefik on the VPS (a plain Ubuntu 26 image)? Use the same link: the bundled javis-gateway (Caddy) issues the certificate itself when ports 80/443 are free.
 
 Three one-time steps:
-1. Make the GHCR image Public: GitHub → repo → Packages → javis-os → Package settings → Visibility = Public.
+1. Verify image availability and permissions: the Compose file may use an upstream GHCR image; this repo does not currently establish a published ElevionTech image. Do not change a private package to Public just to work around access errors.
 2. Create the admin account: fill in JAVIS_ADMIN_USER + JAVIS_ADMIN_PASSWORD (recommended), or open the app right after deploying and set one yourself. While no admin exists, whoever opens the link first can create it. Then turn on 2FA ([Security and accounts](docs/en/14-security-and-accounts.md)).
 3. Sign in to a brain on the Models page.
 Details and troubleshooting: [DEPLOY.en.md](DEPLOY.en.md).
 </details><details>
-<summary><b>Option 2: Docker on any VPS (no clone needed)</b></summary>🛒 Need a VPS? A Hostinger VPS runs this option too.
+<summary><b>Option 2: Docker on a VPS (after source restoration)</b></summary>Not yet deployment-ready. The source snapshot is incomplete; image references and deployment should be validated after the missing files are restored.
 
 # Docker required (don't have it?  curl -fsSL https://get.docker.com | sh)
-mkdir javis && cd javis
-curl -fsSLO https://raw.githubusercontent.com/blogminhquy/javis-os/main/docker-compose.yml
+git clone https://github.com/ElevionTech/javis.git javis
+cd javis
 
 docker compose run --rm javis claude auth login --claudeai   # sign in to Claude once (optional)
 docker compose up -d                                          # pull the image and run
@@ -214,13 +219,13 @@ Open http://<vps-ip>:7777 and set the admin username and password right away (at
 
 Remote access without a domain: docker compose --profile tunnel up -d, then docker compose logs tunnel | grep trycloudflare prints an HTTPS link.
 </details><details>
-<summary><b>Option 3: Linux or macOS, no Docker</b></summary>git clone https://github.com/blogminhquy/javis-os.git javis && cd javis
+<summary><b>Option 3: Linux or macOS, no Docker</b></summary>git clone https://github.com/ElevionTech/javis.git javis && cd javis
 chmod +x install.sh && ./install.sh
 The script installs Python, Node and the CLI brains, creates a venv, registers a service that starts at boot, and prints the address.
 
 🍎 macOS, open it like an app: double-click JAVIS OS.app (or Start JAVIS OS.command). Since 0.306.0 ./install.sh makes Javis start at login and open the dashboard (turn off: ./bin/javis-autostart.sh uninstall). Details: [README.md](bin/README.md).
 </details><details>
-<summary><b>Option 4: Windows (personal machine)</b></summary>git clone https://github.com/blogminhquy/javis-os.git javis; cd javis
+<summary><b>Option 4: Windows (personal machine)</b></summary>git clone https://github.com/ElevionTech/javis.git javis; cd javis
 powershell -ExecutionPolicy Bypass -File install.ps1
 install.ps1 does it all in one pass: Python, venv and libraries, the four subscription CLI brains (claude, codex, agy, grok), the .env, freeing port 7777 and starting the server. It ends with a table of which brains are ready. Without winget, install Python 3.12 (tick "Add python.exe to PATH") and Node.js LTS by hand first, then run it again.
 Run with a visible window (live log):  setup.bat
@@ -317,7 +322,7 @@ Full documentation	🇬🇧 English · 🇻🇳 Tiếng Việt
 
 Adding a language is a data change, not a code change: one entry in server/lang_registry.py plus one dashboard/i18n/<code>.json, and optionally system/mcp-catalog.<code>.json. Anything not translated yet shows in English. See CONTRIBUTING.md if you would like to help.
 🤝 Contributing
-Bug reports, ideas, translations and pull requests are all welcome, in English or Vietnamese.
+Contributions to this snapshot should be coordinated with the private repository owner. For upstream contributions, see the original Javis OS project.
 Start here	What it gives you
 [CONTRIBUTING.md](CONTRIBUTING.md)	Setting up, running the tests (python tests/run.py), the code conventions
 [ARCHITECTURE.md](ARCHITECTURE.md)	How the pieces fit together, and a map of the server modules
@@ -330,6 +335,7 @@ Please follow the [Code of Conduct](CODE_OF_CONDUCT.md), and report security pro
 
 If Javis is useful to you, a ⭐ on the repo helps other people find it.
 
+Upstream Javis OS star history
 🙏 Credits
 - Brains: Claude Code and the Claude Agent SDK (Anthropic), Codex CLI (OpenAI), Grok Build (xAI), Antigravity (Google), plus the APIs of OpenRouter, OpenAI, Google Gemini, Anthropic, Groq and Ollama.
 - Tool standard: Model Context Protocol. The whole Javis connection store runs on it.

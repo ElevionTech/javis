@@ -1,4 +1,4 @@
-<div align="center"><a href="https://github.com/ElevionTech/javis"><img src="docs/assets/social-preview.png" width="100%" alt="Javis OS project preview"></a>
+<div align="center"><a href="https://github.com/ElevionTech/javis"><img src="docs/assets/marga-ai.png" width="100%" alt="Javis OS project preview"></a>
 Javis OS
 Your AI workforce. Never miss the best AI.
 The upstream Javis OS project brings together Claude, ChatGPT, Gemini, Grok and the models you choose into one 24/7 workforce on your own machine or server. Each coworker has a role, shares the same memory and tools, and keeps working in the background. When a better model ships, switch and keep everything they learned.

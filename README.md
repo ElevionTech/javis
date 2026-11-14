@@ -38,7 +38,7 @@ Upstream project website: javisos.com · Open source · Self-hosted · 14 AI pro
 
 Website · Quick start · Why Javis · Brains · Features · Install · [Docs](docs/en/README.md) · Upstream support
 
-<img src="docs/assets/screenshots/dashboard.png" alt="The Javis OS dashboard on a real brain of 1,633 notes and 2,413 links: the file tree on the left, the knowledge graph in the middle and the chat bar at the bottom" width="100%"></div>⚡ Quick start
+<img src="docs/assets/dashboard.png" alt="The Javis OS dashboard on a real brain of 1,633 notes and 2,413 links: the file tree on the left, the knowledge graph in the middle and the chat bar at the bottom" width="100%"></div>⚡ Quick start
 Repository: ElevionTech/javis (private; GitHub access required).
 [!CAUTION]
 Installation is not yet supported from this snapshot. The repository currently excludes 21 files pending security review, including required dashboard files. The commands below reference your own repository, but should only be run after those files are safely restored and installation is tested. They are provided for future use, not as a verified working installer.
